@@ -49,7 +49,7 @@ class Appointment(models.Model):
     issues = models.TextField(null=True,blank=True)
     symptoms = models.TextField(null=True,blank=True)
     appointment_id = ShortUUIDField(
-        Lenght = 6,
+        length = 6,
         max_length = 10,
         unique = True,
         alphabet = '0123456789',
@@ -112,7 +112,7 @@ class Billing(models.Model):
         default="Не оплачено",
     )
     billing_id = ShortUUIDField(
-        Lenght = 6, max_length=10, unique=True, alphabet = '0123456789'
+        length = 6, max_length=10, unique=True, alphabet = '0123456789'
     )
     date = models.DateField(auto_now_add=True)
 

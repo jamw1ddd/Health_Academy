@@ -202,3 +202,5 @@ JAZZMIN_SETTINGS = {
     "show_sidebar": True,
     "show_ui_builder": True,
 }
+
+AUTH_USER_MODEL = 'userauths.User'

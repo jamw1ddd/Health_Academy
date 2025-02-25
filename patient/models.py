@@ -1,6 +1,4 @@
 from django.db import models
-
-from base.models import Appointment
 from userauths.models import User
 
 
@@ -28,11 +26,11 @@ class Patient(models.Model):
 class Notification(models.Model):
     patient = models.ForeignKey(Patient,on_delete=models.SET_NULL,null=True,blank=True)
     appointment = models.ForeignKey(
-        Appointment,
+        "base.Appointment",
         on_delete=models.CASCADE,
         null=True,
         blank=True,
-        related_name="doctor_appointment_notification",
+        related_name="patient_appointment_notification",
         )
     category = models.CharField(max_length=100,choices=NOTIFICATION_ChOICES)
     seen = models.BooleanField(default=False)
