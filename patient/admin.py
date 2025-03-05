@@ -1,5 +1,7 @@
 from django.contrib import admin
-from .models import Patient,Notification
+
+from .models import Notification, Patient
+
 
 class PatientAdmin(admin.ModelAdmin):
     list_display = [
@@ -11,15 +13,10 @@ class PatientAdmin(admin.ModelAdmin):
         "dob"
     ]
 
+
 class NotificationAdmin(admin.ModelAdmin):
-    list_display = [
-        "patient",
-        "appointment",
-        "category",
-        "seen",
-        "date"
-    ]   
+    list_display = ["patient", "appointment", "category", "seen", "date"]
 
 
-admin.site.register(Patient,PatientAdmin)
-admin.site.register(Notification,NotificationAdmin)
+admin.site.register(Patient, PatientAdmin)
+admin.site.register(Notification, NotificationAdmin)

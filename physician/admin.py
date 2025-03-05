@@ -1,5 +1,6 @@
 from django.contrib import admin
-from .models import Doctor,Notification
+
+from .models import Doctor, Notification
 
 
 class DoctorAdmin(admin.ModelAdmin):
@@ -8,18 +9,13 @@ class DoctorAdmin(admin.ModelAdmin):
         "full_name",
         "specialization",
         "qualification",
-        "year_of_exp"
+        "year_of_exp",
     ]
 
+
 class NotificationAdmin(admin.ModelAdmin):
-    list_display = [
-        "doctor",
-        "appointment",
-        "category",
-        "seen",
-        "date"
-    ]   
+    list_display = ["doctor", "appointment", "category", "seen", "date"]
 
 
-admin.site.register(Doctor,DoctorAdmin)
-admin.site.register(Notification,NotificationAdmin)
+admin.site.register(Doctor, DoctorAdmin)
+admin.site.register(Notification, NotificationAdmin)
